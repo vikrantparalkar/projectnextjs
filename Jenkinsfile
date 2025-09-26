@@ -9,12 +9,12 @@ node{
         echo 'clonning the repo'
         git(
             branch: 'main',
-            url: https://github.com/vikrantparalkar/projectnextjs
+            url: 'https://github.com/vikrantparalkar/projectnextjs'
         )
     }
     stage('Deply to EC2'){
         echo 'deploying to ec2'
-        git(
+       
             sh"""
             sudo mkdir -p {appDir}
             sudo chown -R jenkins:jenkins ${appDir}
@@ -29,6 +29,6 @@ node{
 
 
             """
-        )
+        
     }
 }
